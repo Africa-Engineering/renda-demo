@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+}
+.clip-path-polygon {
+  clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 100%, 91% 4%);
+}
+.bg-primary {
+  background-color: #1b547f !important;
+}
+.text-primary {
+  color: #1b547f !important;
+}
+.text-white {
+  color: white !important;
+}
+.border-primary {
+  border: 1px solid #1b547f !important;
+}
+
+.border-red {
+  border-color: rgb(239, 65, 65) !important;
+  outline: rgb(239, 65, 65) !important;
+}
+
+.grid-c-5 {
+  grid-template-columns: repeat(5, 1fr) !important;
+}
+
+.grid-c-9 {
+  grid-template-columns: repeat(9, 1fr) !important;
+}
+.col-sp-3 {
+  grid-column: span 3 / span 3 !important;
+}
+.grid-c-5 {
+  grid-template-columns: repeat(5, 1fr) !important;
+}
+.grid-c-6 {
+  grid-template-columns: repeat(6, 1fr) !important;
+}
+.grid-c-7 {
+  grid-template-columns: repeat(7, 1fr) !important;
+}
+.grid-c-8 {
+  grid-template-columns: repeat(8, 1fr) !important;
+}
+.grid-c-9 {
+  grid-template-columns: repeat(9, 1fr) !important;
+}
+.grid-c-10 {
+  grid-template-columns: repeat(10, 1fr) !important;
+}
+.grid-c-11 {
+  grid-template-columns: repeat(11, 1fr) !important;
+}
+
+.radio-order{
+  width: 400px !important;
+  height: 60px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+ 
+}
+
+.radio-checked{
+  width: 400px !important;
+  height: 60px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-color: #1B547F;
+}
+
+.radio-text {
+  margin-left: 20px !important;
+}
+
+.nav:hover {
+  background-color: #1b547f !important;
+  color: white!;
+}
+.nav:hover.nav span,
+.nav:hover.nav div {
+  color: white !important;
+}
+
+.activeNav {
+  background-color: #1b547f !important;
+}
+.activeNav span,
+.activeNav div {
+  color: white !important;
+}
+.grid-c-5 {
+  grid-template-columns: repeat(5, 1fr) !important;
+}
+.grid-c-6 {
+  grid-template-columns: repeat(6, 1fr) !important;
+}
+.grid-c-9 {
+  grid-template-columns: repeat(9, 1fr) !important;
+}
+.col-sp-3 {
+  grid-column: span 3 / span 3 !important;
+}
+.grid-c-8 {
+  grid-template-columns: repeat(8, 1fr) !important;
+}
+.grid-c-10 {
+  grid-template-columns: repeat(10, 1fr) !important;
+}
+#react-portal-modal-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  align-items: center;
+  padding: 3rem;
+}
+#react-portal-modal-container .container {
+  display: flex;
+}
+#react-portal-modal-container .close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: white;
+  z-index: 40;
+  padding: 3rem;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.input option:first-child {
+  color: yellow;
+}
+
+.modal-container {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(15, 14, 14, 0.5);
+  z-index: 2000;
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+  .md_resolution {
+    display: none !important;
+  }
+  .onboarding_layout_container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+ .md_resolution {
+    display: block !important;
+  }
+  .onboarding_layout_container {
+     display: flex;
+     flex-direction: row;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .login_md_resolution {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+ .login_md_resolution {
+    display: block !important;
+  }
+}

@@ -1,0 +1,76 @@
+import { Button } from "@/components";
+import { OnboardLayout } from "@/layout";
+import { StoreState } from "@/store/types/store-state.types";
+import { OnboardRoutes, baseURL } from "@/utils";
+import axios from "axios";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+
+const ConfirmEmail = () => {
+  const router = useRouter();
+  const [loading, setLoading] = useState<boolean>(false);
+  const { getStarted } = useSelector((state: StoreState) => state);
+  const [error, setError] = useState<string>("");
+  const confirmEmail = async () => {
+    setLoading(true);
+    setError("");
+    try {
+      const { data } = await axios.post(baseURL + "verifyRegistrationEmail", {
+        email: getStarted.businessEmailAddress,
+      });
+      if (data.success) {
+        router.push(OnboardRoutes.REGISTRATION_SUCCESSFUL);
+      }
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+      setError((error as any).response.data.errorMessage);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <OnboardLayout>
+      <div className="max-w-4xl">
+        <div>
+          {error && (
+            <p className="text-white bg-red-500 p-4 rounded-md  text-1xl">
+              {" "}
+              {error}
+            </p>
+          )}
+          <div className="pt-10">
+            <h1 className="text-3xl text-primary font-extrabold">
+              Verify Your Account
+            </h1>
+            <p className="text-gray-400 text-[13px] md:text-[18px] leading-10">
+              Click the ‘Verify email’ button below to get a verification link
+              sent to your registered email address.
+            </p>
+          </div>
+          <div className="flex gap-4 pt-6 max-w-2xl mb-15">
+            <Button
+              title="Resend email"
+              className="!text-gray-500 w-full"
+              variant="secondary"
+              size="sm"
+              loading={loading}
+              handleClick={confirmEmail}
+            />
+            <Button
+              title="Verify email"
+              size="sm"
+              className="w-full"
+              handleClick={confirmEmail}
+              loading={loading}
+            />
+          </div>
+        </div>
+      </div>
+    </OnboardLayout>
+  );
+};
+
+export default ConfirmEmail;
