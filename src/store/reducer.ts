@@ -2,6 +2,7 @@ import { StateReducerActions } from "@/types";
 import { StoreState } from "./types/store-state.types";
 import { InventoryItemType } from "@/_tabs/Inventory/types/inventory-data-type";
 import { number } from "yup";
+import  FormData from 'form-data'
 import { InternalOrdersPostRequestType } from "@/_tabs/Inventory/types/inventory-order-types";
 
 export type InventoryType = {

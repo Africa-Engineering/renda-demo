@@ -1,6 +1,7 @@
 import { InternalOrdersPostRequestType } from "@/_tabs/Inventory/types/inventory-order-types";
 import { InventoryType } from "../reducer";
 import { UserType } from "./user-types";
+import  FormData from 'form-data'
 import { InventoryItemType } from "@/_tabs/Inventory/types/inventory-data-type";
 
 export interface StoreState {

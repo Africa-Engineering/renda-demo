@@ -11,6 +11,7 @@ import { StateReducerActions } from "@/types";
 import { StoreState } from "@/store/types/store-state.types";
 import { baseURL, imageURL } from "@/utils";
 import { InventoryType } from "@/store/reducer";
+import  FormData from 'form-data'
 
 function AddForm() {
   const [forms, setForms] = useState([{ id: 1 }]);

@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import { useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup";
+import  FormData from 'form-data'
 
 const KycUpload = () => {
   const { fileList, companyRegistrationNumber } = useSelector(
